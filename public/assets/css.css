@@ -10,12 +10,16 @@
   margin: 0;
   padding: 0;
   font-family: 'VCR OSD Mono', monospace;
+  color: white;
 }
 
 body {
-  background: #fff;
-  color: #111;
+  background-color: black;
   line-height: 1.6;
+}
+
+header, footer {
+  background-color: black;
 }
 
 .topbar {
@@ -37,11 +41,10 @@ body {
 
 .hero, .timeline-hero {
   position: relative;
-  padding: 40px 6vw 100px;
-  min-height: 600px;
+  padding: 30px 6vw 80px;
+  min-height: 500px;
   text-align: center;
 }
-
 
 .hero p {
   font-size: 20px;
@@ -49,16 +52,13 @@ body {
   margin: 0 auto;
 }
 
-
 h1 {
-
   font-size: 64px;
   font-weight: 800;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
 }
 
 .sources-grid {
-
   display: flex;
   justify-content: space-between;
   padding: 0 6vw;
@@ -93,26 +93,45 @@ footer {
   width: 120px;
   height: 64px;
   border: 3px solid #444;
-  background: #fff;
+  background: #000000;
   font-size: 22px;
   font-weight: 800;
   text-decoration: none;
-  color: #111;
+  color: #ffffff;
   font-family: 'VCR OSD Mono', monospace;
   cursor: pointer;
+
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
+
 .nav a.nav-button:hover {
-  background: #444;
-  color: #fff;
+  background: #000;
+  color: #00eaff;
+  transform: scale(1.08);
+
+  box-shadow:
+    0 0 6px rgba(0, 234, 255, 0.6),
+    0 0 14px rgba(0, 234, 255, 0.4);
 }
+
 
 footer .copyright {
   color: #bbb;
   font-size: 26px;
   font-weight: 800;
   text-align: center;
+  cursor: pointer;
+  transition: 
+    color 0.25s ease,
+    transform 0.25s ease,
+    text-shadow 0.25s ease;
 }
+
 
 p {
   text-align: justify;
@@ -127,6 +146,7 @@ div.infobox {
   border: 5px solid #444;
   padding: 30px;
   margin: 40px 6vw;
+  background: black;
 }
 
 .factionFlag {
@@ -152,106 +172,428 @@ div.infobox {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 40px 4vw 100px;
-  min-height: 500px;
+  padding: 20px 4vw 60px;
+  min-height: 400px;
   flex-wrap: wrap;
 }
 
 .side-button {
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   border: 4px solid #444;
-  background: #fff;
-  font-size: 48px;
+  background: black;
+  color: white;
+  font-size: 40px;
   font-weight: 800;
   cursor: pointer;
 }
 
 .side-button:hover {
   background: #444;
-  color: #fff;
+  color: white;
 }
 
 .timeline-wrapper {
   width: 70%;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .timeline-year {
-  font-size: 72px;
+  font-size: 65px;
   font-weight: 800;
-  margin-bottom: 20px;
+  margin: 5px 0 5px;
+  text-align: center;
+  width: 100%;
 }
 
 .timeline-event {
-  font-size: 24px;
-  width: 80%;
-  margin: 0 auto 40px;
+  font-size: 1.3rem;
+  width: 90%;
+  margin: 0 auto 10px;
+  text-align: justify;
 }
 
 .timeline-line {
   width: 100%;
-  height: 6px;
+  height: 30px;
   position: relative;
   display: flex;
   justify-content: space-between;
-  margin-top: 60px;
-  padding: 0;
+  align-items: center;
+  margin-top: 15px;
 }
 
 .timeline-line::before {
   content: '';
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
   left: 0;
   right: 0;
-  height: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 5px;
   background: #444;
   z-index: 0;
 }
 
 .dot {
-  width: 26px;
-  height: 26px;
-  background: #fff;
-  border: 4px solid #444;
+  width: 22px;
+  height: 22px;
+  background: black;
+  border: 3px solid #444;
   border-radius: 50%;
-  position: relative;
-  top: -12px;
   cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   z-index: 1;
 }
 
 .active-dot {
-  background: #444;
-  color: #fff;
-}
-.tech-image-box {
-  max-width: 520px;
-  margin-bottom: 20px;
+  background: #414141;
 }
 
-.tech-image-box.left {
-  float: left;
-  margin-right: 40px;
-}
-
-.tech-image-box.right {
-  float: right;
-  margin-left: 40px;
-}
-
-.tech-image-box img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
 .infobox::after {
   content: "";
   display: block;
   clear: both;
+}
+
+
+body.tech-page .tech-page-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  padding: 40px 6vw;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+body.tech-page .tech-card {
+  background: #111;
+  border: 3px solid #444;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 0 20px #0ff inset;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.tech-page .tech-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 30px #0ff;
+}
+
+body.tech-page .tech-card-image {
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+}
+
+body.tech-page .tech-card-content {
+  padding: 20px;
+}
+
+body.tech-page .tech-card-content h2 {
+  font-size: 36px;
+  margin-bottom: 16px;
+  color: #0ff;
+}
+
+body.tech-page .tech-card-content p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  text-align: justify;
+  color: #fff;
+}
+
+
+.timeline-event-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #0ff;
+  opacity: 0;
+  transform: scale(0.98);
+  transition: transform 0.6s ease, opacity 0.6s ease, box-shadow 0.6s ease;
+  max-height: 350px;
+  object-fit: cover;
+}
+
+.timeline-event-container p {
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+}
+
+.timeline-event-container.show img {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.timeline-event-container.show p {
+  opacity: 1;
+}
+
+.timeline-event-container img:hover {
+  box-shadow: 0 0 15px #0ff;
+  transform: scale(1.02);
+}
+
+.timeline-event-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+@media screen and (min-width: 900px) {
+  .timeline-event-container {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .timeline-event-container img {
+    max-width: 350px;
+    max-height: 250px;
+  }
+
+  .timeline-event-container p {
+    flex: 1;
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .timeline-hero {
+    padding: 15px 4vw 50px;
+    min-height: 350px;
+  }
+
+  .timeline-wrapper {
+    width: 85%;
+  }
+
+  .timeline-year {
+    font-size: 45px;
+    margin: 3px 0 5px;
+  }
+
+  .side-button {
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+  }
+
+  .timeline-event {
+    font-size: 1.1rem;
+    width: 95%;
+    margin: 0 auto 8px;
+  }
+
+  .timeline-line {
+    margin-top: 12px;
+    height: 25px;
+  }
+
+.timeline-event-container {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.timeline-event-container.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timeline-image {
+  width: 100%;
+  max-width: 600px;
+  display: block;
+  margin: 0 auto 30px;
+}
+
+
+  .timeline-event-container img {
+    max-width: 100%;
+    max-height: 250px;
+  }
+
+  .timeline-event-container p {
+    font-size: 1.1rem;
+  }
+}
+footer .copyright:hover {
+  color: #00eaff;
+  transform: scale(1.06);
+
+  text-shadow:
+    0 0 6px rgba(0, 234, 255, 0.6),
+    0 0 12px rgba(0, 234, 255, 0.4);
+}
+body {
+  animation: crtBoot 1.2s ease-out;
+}
+
+@keyframes scanlineMove {
+  from { background-position-y: 0; }
+  to { background-position-y: 100px; }
+}
+
+
+
+@keyframes scanlineGlow {
+  0% {
+    box-shadow:
+      0 0 6px rgba(0, 234, 255, 0.4),
+      0 0 14px rgba(0, 234, 255, 0.2);
+  }
+  50% {
+    box-shadow:
+      0 0 10px rgba(0, 234, 255, 0.9),
+      0 0 22px rgba(0, 234, 255, 0.5);
+  }
+  100% {
+    box-shadow:
+      0 0 6px rgba(0, 234, 255, 0.4),
+      0 0 14px rgba(0, 234, 255, 0.2);
+  }
+}
+
+
+.nav a.nav-button:hover {
+  animation: scanlineGlow 1.8s infinite ease-in-out;
+}
+
+.nav a.nav-button:active {
+  transform: scale(0.96);
+  box-shadow:
+    0 0 4px rgba(0, 234, 255, 0.6),
+    0 0 10px rgba(0, 234, 255, 0.3);
+}
+
+
+.nav a.nav-button.active-page {
+  color: #00eaff;
+  border-color: #00eaff;
+
+  box-shadow:
+    0 0 10px rgba(0, 234, 255, 1),
+    0 0 26px rgba(0, 234, 255, 0.6);
+}
+
+
+
+footer .copyright:active {
+  transform: scale(0.95);
+  text-shadow:
+    0 0 4px rgba(0, 234, 255, 0.6),
+    0 0 10px rgba(0, 234, 255, 0.4);
+}
+
+
+
+.dot:hover {
+  border-color: #00eaff;
+  box-shadow:
+    0 0 8px rgba(0, 234, 255, 0.8),
+    0 0 16px rgba(0, 234, 255, 0.4);
+}
+
+.active-dot {
+  background: #000;
+  border-color: #00eaff;
+
+  box-shadow:
+    0 0 10px rgba(0, 234, 255, 1),
+    0 0 22px rgba(0, 234, 255, 0.6);
+}
+
+
+.timeline-event-container img {
+  box-shadow:
+    0 0 10px rgba(0, 234, 255, 0.6);
+}
+
+.timeline-event-container img:hover {
+  box-shadow:
+    0 0 18px rgba(0, 234, 255, 0.9),
+    0 0 30px rgba(0, 234, 255, 0.5);
+}
+body.cities-page {
+  background-color: #000;
+  font-family: 'VCR OSD Mono', monospace;
+  color: #fff;
+}
+
+.city-section {
+  position: relative;
+  min-height: 600px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  padding: 80px 6vw;
+  overflow: hidden;
+}
+
+.city-section::before {
+  content: "";
+  position: absolute;
+  top:0; left:0; right:0; bottom:0;
+  background: rgba(0,0,0,0.6);
+  z-index: 0;
+}
+
+.city-content {
+  position: relative;
+  max-width: 900px;
+  z-index: 1;
+  background: rgba(0,0,0,0.75);
+  border: 3px solid #0ff;
+  padding: 30px;
+  box-shadow: 0 0 20px #0ff inset, 0 0 40px #00eaff inset;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.city-content.left {
+  margin-right: auto;
+  text-align: left;
+}
+
+.city-content.right {
+  margin-left: auto;
+  text-align: right;
+}
+
+.city-content:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 30px #0ff inset, 0 0 60px #00eaff inset;
+}
+
+.city-content h1 {
+  font-size: 2.8rem;
+  color: #0ff;
+  text-shadow: 0 0 6px #0ff, 0 0 12px #00eaff;
+}
+
+.city-content h2 {
+  font-size: 1.3rem;
+  color: #bbb;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.cityImage {
+  max-width: 100%;
+  margin-top: 20px;
+  border: 2px solid #0ff;
+  box-shadow: 0 0 12px #0ff;
+}
+
+.infoboxText {
+  text-align: justify;
+  font-size: 1.2rem;
+  line-height: 1.5;
 }

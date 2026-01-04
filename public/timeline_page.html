@@ -2,12 +2,14 @@
 <html lang="en">
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Thousand Week Reich — Timeline">
-    <meta name="keywords" content="TWR, Timeline, Alternate History, History, Thousand Week Reich, America, German Reich, Japan">
-    <meta name="author" content="Noah Connor C. Francisco, Edgardo Javier D. Kasilag III">
+  <meta name="description" content="Thousand Week Reich — Timeline">
+  <meta name="keywords" content="TWR, Timeline, Alternate History, History, Thousand Week Reich, America, German Reich, Japan">
+  <meta name="author" content="Noah Connor C. Francisco, Edgardo Javier D. Kasilag III">
   <title>TWR — Timeline</title>
   <link rel="stylesheet" href="assets/css.css">
   <script src="../public/Scripts/timeline.js" defer></script>
+  <script src="../public/Scripts/footer.js" defer></script>
+  <link rel="icon" type="image/png" href="../public/assets/Logo.png">
 </head>
 
 <body>
@@ -24,9 +26,13 @@
 
   <div class="timeline-wrapper">
     <h1 id="year" class="timeline-year">1939</h1>
-    <p id="event" class="timeline-event">
-      Germany invades Poland, beginning the Second World War.
-    </p>
+    
+    <div class="timeline-event-container">
+      <img id="event-image" src="../public/assets/poland_timeline.jpg" alt="Germany Invades Poland">
+      <p id="event" class="timeline-event">
+        Germany invades Poland, beginning the Second World War.
+      </p>
+    </div>
 
     <div class="timeline-line" id="timeline-line"></div>
   </div>
@@ -46,7 +52,6 @@
   </nav>
   <div class="copyright">©Quandale Dingle Productions | All Rights Reserved</div>
 </footer>
-
 
 </body>
 </html>
