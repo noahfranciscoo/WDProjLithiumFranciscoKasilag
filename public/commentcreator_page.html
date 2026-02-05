@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Thousand Week Reich Comment Creator">
+  <meta name="keywords" content="TWR, Comments, Alternate History, History, Thousand Week Reich, America, German Reich, Japan">
+  <meta name="author" content="Noah Connor C. Francisco, Edgardo Javier D. Kasilag III">
+  <title>TWR — Create Comment</title>
+  <link rel="stylesheet" href="../public/assets/css.css">
+</head>
+<body>
+  <header class="topbar">
+    <a href="../index.html" class="logo-container"><img src="assets/Logo.png" alt="Home Logo"></a>
+  </header>
+  
+  <main class="creator-main">
+    <div class="form-container">
+      <h2 style="text-align: center; margin-bottom: 30px;">COMMENT CREATOR</h2>
+      <form onsubmit="saveComment(event)">
+        <div class="form-group">
+          <label>> ID / EMAIL</label>
+          <input type="text" id="userIdentifier" placeholder="Enter identification..." required>
+        </div>
+        <div class="form-group">
+          <label>> ACCESS KEY (PASSWORD)</label>
+          <input type="password" id="userPassword" placeholder="Set security key..." required>
+          <button type="button" class="toggle-pass" onclick="togglePasswordVisibility()">
+            <img id="eyeIcon" src="assets/closed.png" alt="Toggle Visibility" class="eye-icon">
+          </button>
+        </div>
+        <div class="form-group">
+          <label>> TAG</label>
+          <select id="commentTag">
+            <option value="BUG/ERROR">BUG/ERROR</option>
+            <option value="QUESTION">QUESTION</option>
+            <option value="SUGGESTION">SUGGESTION</option>
+            <option value="MISCELLANEOUS">MISCELLANEOUS</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>> MESSAGE PACKET</label>
+          <textarea id="commentTextArea" rows="4" placeholder="Awaiting input..." required></textarea>
+          <button type="button" class="emoji-toggle-btn" onclick="toggleEmojiPicker('creatorEmojiGrid')">😀</button>
+          <div id="creatorEmojiGrid" class="emoji-grid" style="bottom: -150px; right: 0;"></div>
+        </div>
+        <button type="submit" class="submit-btn">SEND COMMENT</button>
+      </form>
+    </div>
+  </main>
+
+  <div id="terminalModal" class="modal-overlay">
+    <div class="modal-box">
+        <span id="modalTitle" class="modal-title">>> SYSTEM ALERT</span>
+        <span id="modalMessage" class="modal-message"></span>
+        <input type="text" id="modalInput" class="modal-input" placeholder="INPUT REQUIRED...">
+        <button id="modalActionBtn" class="modal-btn" onclick="handleModalAction()">ACKNOWLEDGE</button>
+    </div>
+  </div>
+
+  <footer>
+    <nav class="nav">
+      <a href="map_page.html" class="nav-button">Map</a>
+      <a href="timeline_page.html" class="nav-button">Timeline</a>
+      <a href="factions_page.html" class="nav-button">Factions</a>
+      <a href="cities_page.html" class="nav-button">Cities</a>
+      <a href="tech_page.html" class="nav-button">Tech</a>
+      <a href="commentboard_page.html" class="nav-button">Comments</a>
+      <a href="sources_page.html" class="nav-button">Sources</a>
+    </nav>
+    <div class="copyright">©Quandale Dingle Productions | All Rights Reserved</div>
+  </footer>
+  <script src="../public/Scripts/comments.js"></script>
+</body>
+</html>

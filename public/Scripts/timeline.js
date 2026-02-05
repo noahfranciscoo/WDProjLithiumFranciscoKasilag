@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <br>
         <p>Paris soon falls, and France surrenders to the German Reich. This devastates the British public, leading to Churchill's removal. The new Prime Minister signs an armistice with Germany, although the Middle East and African Theatres remain active. Denmark and Norway are also captured during this campaign.</p>
       `,
-      image: "../public/assets/germaninvadeussr.png",
+      image: "../public/assets/1940timeline.jpg",
       alt: "Blitzkrieg in France"
     },
     {
