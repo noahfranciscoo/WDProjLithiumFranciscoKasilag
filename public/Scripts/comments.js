@@ -10,7 +10,7 @@ const emojiList = [
     "🙌","👐","🤲","🤝","🙏","💪","🧠","👀","👁️","💋","👄","🦷","👅","❤","🧡","💛","💚","💙","💜","🤎",
     "🖤","🤍","💔","❣","💕","💞","💓","💗","💖","💘","💝","🔥","✨","🌟","⭐","🎵","🎶","❗","❓","💤"
 ];
-
+//This creates a constant which includes a list of emojis the user can use while creating their comment.
 function togglePasswordVisibility() {
     const passInput = document.getElementById('userPassword');
     const eyeIcon = document.getElementById('eyeIcon');
